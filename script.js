@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const mainContent = document.getElementById("content");
   const themeToggle = document.getElementById("theme-toggle");
   const backToTop = document.getElementById("back-to-top");
+  const hamburger = document.querySelector(".hamburger");
+  const nav = document.querySelector("nav");
 
   // Load section content
   navLinks.forEach((link) => {
@@ -31,6 +33,9 @@ document.addEventListener("DOMContentLoaded", () => {
         // Update active link
         navLinks.forEach((l) => l.classList.remove("active"));
         link.classList.add("active");
+
+        // Close mobile menu on link click
+        nav.classList.remove("active");
 
         // Initialize Typed.js for About section
         if (section === "about.html" && typeof Typed !== "undefined") {
@@ -76,6 +81,11 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       backToTop.classList.remove("visible");
     }
+  });
+
+  // Hamburger menu toggle
+  hamburger.addEventListener("click", () => {
+    nav.classList.toggle("active");
   });
 
   // Scroll animations for sections

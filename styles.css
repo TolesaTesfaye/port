@@ -28,11 +28,10 @@ header {
 
 .header-container {
   max-width: 1200px;
-  margin: 5 auto;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  align-content: center;
 }
 
 .logo {
@@ -52,6 +51,11 @@ header {
   color: white;
   font-size: 1.5rem;
   font-weight: 700;
+}
+
+nav {
+  display: flex;
+  align-items: center;
 }
 
 nav ul {
@@ -89,6 +93,15 @@ nav ul li a.active {
 
 #theme-toggle:hover {
   transform: rotate(180deg);
+}
+
+.hamburger {
+  display: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
 }
 
 main {
@@ -163,7 +176,64 @@ body.dark #content {
   }
 }
 
+/* Mobile Styles */
 @media (max-width: 768px) {
+  header {
+    padding: 0.5rem 1rem;
+  }
+
+  .header-container {
+    flex-wrap: wrap;
+    position: relative;
+    padding: 0.5rem;
+  }
+
+  .logo img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .logo h1 {
+    font-size: 1.2rem;
+  }
+
+  .hamburger {
+    display: block;
+    margin-left: auto;
+  }
+
+  nav {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: linear-gradient(135deg, #3b82f6, #ec4899);
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  nav.active {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  nav ul li a {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  #theme-toggle {
+    font-size: 1rem;
+    position: absolute;
+    top: 1rem;
+    right: 3rem;
+  }
+
   main {
     padding: 0 1rem;
     margin: 1rem auto;
@@ -173,7 +243,41 @@ body.dark #content {
     padding: 1.5rem;
   }
 
+  #back-to-top {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
+/* Extra Small Screens */
+@media (max-width: 480px) {
+  .logo img {
+    width: 28px;
+    height: 28px;
+  }
+
   .logo h1 {
-    font-size: 1.2rem;
+    font-size: 1rem;
+  }
+
+  nav ul li a {
+    font-size: 0.8rem;
+    padding: 0.4rem;
+  }
+
+  #content {
+    padding: 1rem;
+  }
+
+  main {
+    padding: 0 0.5rem;
+  }
+
+  #theme-toggle {
+    font-size: 0.9rem;
+    right: 2.5rem;
   }
 }
