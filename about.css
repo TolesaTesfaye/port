@@ -1,0 +1,245 @@
+.about-section {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.welcome-hero {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 0;
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.1),
+    rgba(236, 72, 153, 0.1)
+  );
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
+.welcome-text {
+  flex: 1;
+  padding: 20px;
+}
+
+.welcome-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.welcome-text .highlight {
+  color: #ec4899;
+}
+
+.welcome-text .typed-text {
+  font-size: 1.8rem;
+  color: #3b82f6;
+  min-height: 2.2rem;
+  padding: 10px 0;
+}
+
+.welcome-text .welcome-paragraph {
+  margin: 15px 0;
+  line-height: 1.6;
+  max-width: 500px;
+  padding: 15px 0;
+}
+
+.cta-buttons {
+  margin: 20px 0;
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.primary-btn {
+  background: #3b82f6;
+  color: white;
+}
+
+.primary-btn:hover {
+  background: #ec4899;
+  transform: translateY(-3px);
+}
+
+.secondary-btn {
+  background: transparent;
+  color: #3b82f6;
+  border: 2px solid #3b82f6;
+}
+
+.secondary-btn:hover {
+  background: #3b82f6;
+  color: white;
+  transform: translateY(-3px);
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-links a {
+  color: #1e293b;
+  font-size: 1.5rem;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.social-links a:hover {
+  color: #ec4899;
+  transform: scale(1.2);
+}
+
+.welcome-image {
+  flex: 0 0 auto;
+}
+
+.about-img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.about-img:hover {
+  transform: scale(1.05);
+}
+
+.about-details {
+  padding: 20px 0;
+}
+
+.about-details h2 {
+  font-size: 2rem;
+  color: #3b82f6;
+  margin-bottom: 20px;
+}
+
+.about-content {
+  max-width: 800px;
+}
+
+.about-content p {
+  margin-bottom: 15px;
+  line-height: 1.7;
+  padding: 10px 15px;
+}
+
+.fun-fact {
+  margin-top: 40px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s;
+}
+
+.fun-fact h3 {
+  font-size: 1.5rem;
+  color: #3b82f6;
+  margin-bottom: 10px;
+}
+
+.fun-fact p {
+  line-height: 1.6;
+  padding: 10px 15px;
+}
+
+.welcome-hero,
+.about-details,
+.fun-fact {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.welcome-hero.visible,
+.about-details.visible,
+.fun-fact.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body.dark .welcome-text h1,
+body.dark .welcome-text p,
+body.dark .social-links a {
+  color: #e2e8f0;
+}
+
+body.dark .welcome-hero {
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.2),
+    rgba(236, 72, 153, 0.2)
+  );
+}
+
+body.dark .fun-fact {
+  background: rgba(30, 41, 59, 0.9);
+}
+
+body.dark .about-content p,
+body.dark .fun-fact p {
+  color: #e2e8f0;
+}
+
+@media (max-width: 768px) {
+  .welcome-hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .welcome-text {
+    padding: 10px;
+  }
+
+  .welcome-text h1 {
+    font-size: 2rem;
+  }
+
+  .welcome-text .typed-text {
+    font-size: 1.5rem;
+  }
+
+  .about-img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .about-content p,
+  .fun-fact p {
+    padding: 10px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

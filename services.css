@@ -1,0 +1,59 @@
+.services-section {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.services-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #3b82f6;
+}
+
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.service-item {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.service-item:hover {
+  transform: scale(1.05);
+}
+
+.service-item i {
+  font-size: 2rem;
+  color: #3b82f6;
+  margin-bottom: 10px;
+}
+
+.service-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.service-item p {
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .services-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
